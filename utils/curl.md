@@ -1,11 +1,10 @@
 # CURL Common Usages
 
-[Reference](https://www.thegeekstuff.com/2012/04/curl-examples/)
+> [Reference](https://www.thegeekstuff.com/2012/04/curl-examples/)
 
-## Download a single file
+## Download A File
 
-> Download a single file and print it into standard console output by default.
-
+### Default To STDOUT
 ```bash
 $ curl http://www.centos.org
 <html>
@@ -17,8 +16,7 @@ $ curl http://www.centos.org
 </html>
 ```
 
-> Use shell redirection to output into another file or pipe.
->
+### Redirect To A File/A Pipe
 
 ```bash
 $ curl http://www.centos.org > centos.html
@@ -35,19 +33,18 @@ $ cat centos.html
 </html>
 ```
 
-## Specify target file name
+### Specify Target File Name
 
-## Save downloaded content to a specific file by using `-o/-O`
-
-> 1. -o：specify target file name
-> 2. -O：use default file name
+Save downloaded content to a specific file by using `-o/-O`
+- `-o`：specify a file name
+- `-O`：use default file name
 
 ```bash
 $ curl -o mygettext.html http://www.gnu.org/software/gettext/manual/gettext.html
 $ curl -O http://www.gnu.org/software/gettext/manual/gettext.html
 ```
 
-## Fetch multiple files at a time
+## Download Multiple Files
 
 ```bash
 curl -O URL1 -O URL2
@@ -55,9 +52,10 @@ curl -O URL1 -O URL2
 
 > If `CURL` is going to download multiple files from one single site, it will try to reuse the connection.
 
-## Use `-L` to follow HTTP Location Header
+## Handle HTTP Redirection  
 
-> By default, `CURL` will not follow HTTP `Location` header. 
+By default, `CURL` will not follow HTTP `Location` header. 
+Use `-L` to follow HTTP Location Header
 
 ```bash
 $ curl http://www.google.com
@@ -73,18 +71,13 @@ $ curl http://www.google.com
 </BODY>
 </HTML>
 ```
-
-> Use `-L` to force `CURL` to follow the redirection.
->
-
 ```bash
 $ curl -L http://www.google.com
 ```
 
-## Breakpoint continuation
+## Continue from Breakpoint
 
-> Use `-C` to continue/resume the download of a large file .
->
+ Use `-C` to continue/resume the download of a large file .
 
 ```bash
 $ curl -O http://www.gnu.org/software/gettext/manual/gettext.html
@@ -93,7 +86,7 @@ $ curl -C - -O http://www.gnu.org/software/gettext/manual/gettext.html
 ###############            21.1%
 ```
 
-## Bandwidth Limitation
+## Limit Download Bandwidth
 
 > Use `--limit-rate` to limit the max bandwidth that `CURL` can occupy.
 >
@@ -103,9 +96,9 @@ $ curl -C - -O http://www.gnu.org/software/gettext/manual/gettext.html
 $ curl --limit-rate 1000B -O http://www.gnu.org/software/gettext/manual/gettext.html
 ```
 
-## Download files that are updated within specific time
+## Download A File Only If Updated
 
-> Use `-z` to download a file updated with specific time.
+Use `-z` to download a file updated with specific time.
 
 ```bash
 # Download yy.html if it was update after Dec 21, 2011.
@@ -116,8 +109,7 @@ $ curl -z -21-Dec-11 http://www.example.com/yy.html
 
 ## Authorization
 
-> Use `-u` to provide username and password.
->
+ Use `-u` to provide username and password.
 
 ```bash
 $ curl -u username:password URL
@@ -125,20 +117,20 @@ $ curl -u username:password URL
 $ curl -u username URL
 ```
 
-## Download files from FTP Services
+## FTP
+
+### Download files from FTP Services
 
 ```bash
  # List all files and folders under public_html
  $ curl -u ftpuser:ftppass -O ftp://ftp_server/public_html/
- 
  # Download xss.php
  curl -u ftpuser:ftppass -O ftp://ftp_server/public_html/xss.php
 ```
 
-## Upload files to FTP Services
+### Upload files to FTP Services
 
-> Use ` -T` to upload specific local files to FTP services.
->
+Use ` -T` to upload specific local files to FTP services.
 
 ```bash
 # Upload myfile.txt
@@ -149,7 +141,7 @@ curl -u ftpuser:ftppass -T "{file1,file2}" ftp://ftp.testserver.com
 curl -u ftpuser:ftppass -T - ftp://ftp.testserver.com/myfile_1.txt
 ```
 
-## List/Download using Ranges
+### List/Download Using Ranges
 
 ```bash
 $ curl   ftp://ftp.uk.debian.org/debian/pool/main/[a-z]/
@@ -173,8 +165,7 @@ $ curl dict://dict.org/d:bash:foldoc
 
 ## Set up proxy for `CURL`
 
-> Use `-x` to set up proxy
->
+Use `-x` to set up proxy
 
 ```bash
 $ curl -x proxysever.test.com:3128 http://google.co.in
@@ -191,8 +182,7 @@ $ curl -x proxysever.test.com:3128 http://google.co.in
 
 ## Transfer request data
 
-> Use `--data/-d` to use POST method
->
+Use `--data/-d` to use POST method
 
 ```bash
 # GET
@@ -203,22 +193,20 @@ $ curl -u username --data "param1=value1&param2=value" https://api.github.com
 $ curl --data @filename https://github.api.com/authorizations
 ```
 
-> Use `--data-urlencode` to escape specific characters.
->
+Use `--data-urlencode` to escape specific characters.
 
 ```bash
 curl -d "value%201" http://hostname.com
 curl --data-urlencode "value 1" http://hostname.com
 ```
 
-> Use `-X` to specify other protocol method
->
+Use `-X` to specify other protocol method
 
 ```bash
 curl -I -X DELETE https://api.github.cim
 ```
 
-> Use `--form` to transfer form data
+Use `--form` to transfer form data
 
 ```bash
 curl --form "fileupload=@filename.txt" http://hostname/resource
