@@ -1,35 +1,19 @@
 # HELP
 
-## PlantUML
+## UML
 
-SVG is more clear for scaling up.
-```
-{% plantuml format="svg" %}
+Using [PlantUML](https://plugins.gitbook.com/plugin/plantuml) to draw UML.
+
+```puml
+@startuml
 Alice -> Bob: Hello, Bob
 Alice <-- Bob: Hello, Alice
-{% endplantuml %}
+@enduml
 ```
-
-{% plantuml %}
-Alice -> Bob: Hello, Bob
-Alice <-- Bob: Hello, Alice
-{% endplantuml %}
-
-```
-{% plantuml format="png" %}
-Alice -> Bob: Hello, Bob
-Alice <-- Bob: Hello, Alice
-{% endplantuml %}
-```
-
-{% plantuml format="png" %}
-Alice -> Bob: Hello, Bob
-Alice <-- Bob: Hello, Alice
-{% endplantuml %}
 
 ## Check Box
 
-```
+```bash
 - [ ] Uncompleted task.
 - [x] Completed task.
 ```
