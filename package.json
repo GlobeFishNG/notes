@@ -1,9 +1,10 @@
 {
   "scripts": {
     "postinstall": "gitbook install",
-    "preview": "gitbook serve"
+    "preview": "gitbook serve",
+    "build": "gitbook build"
   },
   "dependencies": {
-    "gitbook-plugin-plantuml": "^0.0.15"
+    "gitbook-plugin-puml": "^1.0.1"
   }
 }

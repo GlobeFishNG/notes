@@ -1,6 +1,6 @@
 {
   "plugins": [
-    "plantuml",
+    "puml",
     "edit-link",
     "page-toc",
     "codeblock-filename",
