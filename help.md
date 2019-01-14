@@ -4,7 +4,7 @@
 
 Using [PlantUML](https://plugins.gitbook.com/plugin/plantuml) to draw UML.
 
-```puml
+```uml
 @startuml
 Alice -> Bob: Hello, Bob
 Alice <-- Bob: Hello, Alice
