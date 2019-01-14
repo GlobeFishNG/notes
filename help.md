@@ -2,14 +2,35 @@
 
 ## UML
 
-Using [PlantUML](https://plugins.gitbook.com/plugin/plantuml) to draw UML.
+Using [PlantUML](https://github.com/GitbookIO/plugin-puml) to draw UML.
 
-```uml
-@startuml
+* SVG output. (Friendly to scaling)
+
+```
+{% plantuml format = 'svg' %}
 Alice -> Bob: Hello, Bob
 Alice <-- Bob: Hello, Alice
-@enduml
+{% endplantuml %}
 ```
+
+{% plantuml format = 'svg' %}
+Alice -> Bob: Hello, Bob
+Alice <-- Bob: Hello, Alice
+{% endplantuml %}
+
+* PNG output.
+
+```
+{% plantuml format = 'png' %}
+Alice -> Bob: Hello, Bob
+Alice <-- Bob: Hello, Alice
+{% endplantuml %}
+```
+
+{% plantuml format = 'png' %}
+Alice -> Bob: Hello, Bob
+Alice <-- Bob: Hello, Alice
+{% endplantuml %}
 
 ## Check Box
 

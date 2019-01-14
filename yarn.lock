@@ -2,27 +2,21 @@
 # yarn lockfile v1
 
 
-"crypto@>= 0.0.3":
+gitbook-plugin-puml@^1.0.1:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/crypto/-/crypto-1.0.1.tgz#2af1b7cad8175d24c8a1b0778255794a21803037"
-  integrity sha512-VxBKmeNcqQdiUQUW2Tzq0t377b54N2bMtXO/qiLa+6eRRmmC4qT3D4OnTGoT/U6O9aklQ/jTwbOtRMTTY8G0Ig==
-
-gitbook-plugin-plantuml@^0.0.15:
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/gitbook-plugin-plantuml/-/gitbook-plugin-plantuml-0.0.15.tgz#44af12f2c85c6d40cd2f3863da34ecc37a8b570b"
-  integrity sha1-RK8S8shcbUDNLzhj2jTsw3qLVws=
+  resolved "https://registry.yarnpkg.com/gitbook-plugin-puml/-/gitbook-plugin-puml-1.0.1.tgz#8930d54b51e7574e352cf08f6e156baa50ce6d17"
+  integrity sha1-iTDVS1HnV041LPCPbhVrqlDObRc=
   dependencies:
-    crypto ">= 0.0.3"
-    mkdirp ">= 0.5.0"
+    plantuml-encoder "1.2.3"
 
-minimist@0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
-  integrity sha1-hX/Kv8M5fSYluCKCYuhqp6ARsF0=
+pako@^0.2.7:
+  version "0.2.9"
+  resolved "https://registry.yarnpkg.com/pako/-/pako-0.2.9.tgz#f3f7522f4ef782348da8161bad9ecfd51bf83a75"
+  integrity sha1-8/dSL073gjSNqBYbrZ7P1Rv4OnU=
 
-"mkdirp@>= 0.5.0":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
-  integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
+plantuml-encoder@1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/plantuml-encoder/-/plantuml-encoder-1.2.3.tgz#c8514110aa04a0c0e01f22374d911780ed58544d"
+  integrity sha1-yFFBEKoEoMDgHyI3TZEXgO1YVE0=
   dependencies:
-    minimist "0.0.8"
+    pako "^0.2.7"
