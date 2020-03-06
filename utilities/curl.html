@@ -1,0 +1,493 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>CURL · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc/page-toc.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codeblock-filename/block.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../help.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../linux/">
+            
+                <a href="../linux/">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../linux/debian-ubuntu/">
+            
+                <a href="../linux/debian-ubuntu/">
+            
+                    
+                    Debian/Ubuntu
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../linux/debian-ubuntu/clear-up-legacy-kernels.html">
+            
+                <a href="../linux/debian-ubuntu/clear-up-legacy-kernels.html">
+            
+                    
+                    Clear up legacy kernels
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Utilities
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="curl.html">
+            
+                <a href="curl.html">
+            
+                    
+                    CURL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../help.html">
+            
+                <a href="../help.html">
+            
+                    
+                    Help
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >CURL</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="curl">CURL</h1>
+<blockquote>
+<p><a href="https://www.thegeekstuff.com/2012/04/curl-examples/" target="_blank">Reference</a></p>
+</blockquote>
+<h2 id="download-a-file">Download A File</h2>
+<h3 id="default-to-stdout">Default To STDOUT</h3>
+<pre><code class="lang-bash">$ curl http://www.centos.org
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;301 Moved Permanently&lt;/title&gt;&lt;/head&gt;
+&lt;body bgcolor=<span class="hljs-string">&quot;white&quot;</span>&gt;
+&lt;center&gt;&lt;h1&gt;301 Moved Permanently&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx/1.12.2&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="redirect-to-a-filea-pipe">Redirect To A File/A Pipe</h3>
+<pre><code class="lang-bash">$ curl http://www.centos.org &gt; centos.html
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   185  100   185    0     0    333      0 --:--:-- --:--:-- --:--:--   335
+$ cat centos.html
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;301 Moved Permanently&lt;/title&gt;&lt;/head&gt;
+&lt;body bgcolor=<span class="hljs-string">&quot;white&quot;</span>&gt;
+&lt;center&gt;&lt;h1&gt;301 Moved Permanently&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx/1.12.2&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="specify-target-file-name">Specify Target File Name</h3>
+<p>Save downloaded content to a specific file by using <code>-o/-O</code></p>
+<ul>
+<li><code>-o</code>&#xFF1A;specify a file name</li>
+<li><code>-O</code>&#xFF1A;use default file name</li>
+</ul>
+<pre><code class="lang-bash">$ curl -o mygettext.html http://www.gnu.org/software/gettext/manual/gettext.html
+$ curl -O http://www.gnu.org/software/gettext/manual/gettext.html
+</code></pre>
+<h2 id="download-multiple-files">Download Multiple Files</h2>
+<pre><code class="lang-bash">curl -O URL1 -O URL2
+</code></pre>
+<blockquote>
+<p>If <code>CURL</code> is going to download multiple files from one single site, it will try to reuse the connection.</p>
+</blockquote>
+<h2 id="handle-http-redirection">Handle HTTP Redirection</h2>
+<p>By default, <code>CURL</code> will not follow HTTP <code>Location</code> header. Use <code>-L</code> to follow HTTP Location Header</p>
+<pre><code class="lang-bash">$ curl http://www.google.com
+&lt;HTML&gt;
+&lt;HEAD&gt;
+    &lt;meta http-equiv=<span class="hljs-string">&quot;content-type&quot;</span> content=<span class="hljs-string">&quot;text/html;charset=utf-8&quot;</span>&gt;
+    &lt;TITLE&gt;302 Moved&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+    &lt;H1&gt;302 Moved&lt;/H1&gt;
+    The document has moved
+    &lt;A HREF=<span class="hljs-string">&quot;http://www.google.com.hk/url?sa=p&amp;amp;hl=zh-CN&amp;amp;pref=hkredirect&amp;amp;pval=yes&amp;amp;q=http://www.google.com.hk/&amp;amp;ust=1379402837567135amp;usg=AFQjCNF3o7umf3jyJpNDPuF7KTibavE4aA&quot;</span>&gt;here&lt;/A&gt;.
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+</code></pre>
+<pre><code class="lang-bash">$ curl -L http://www.google.com
+</code></pre>
+<h2 id="continue-from-breakpoint">Continue from Breakpoint</h2>
+<p>Use <code>-C</code> to continue/resume the download of a large file .</p>
+<pre><code class="lang-bash">$ curl -O http://www.gnu.org/software/gettext/manual/gettext.html
+<span class="hljs-comment">##############             20.1%</span>
+$ curl -C - -O http://www.gnu.org/software/gettext/manual/gettext.html
+<span class="hljs-comment">###############            21.1%</span>
+</code></pre>
+<h2 id="limit-download-bandwidth">Limit Download Bandwidth</h2>
+<blockquote>
+<p>Use <code>--limit-rate</code> to limit the max bandwidth that <code>CURL</code> can occupy.</p>
+</blockquote>
+<pre><code class="lang-bash"><span class="hljs-comment"># Max downloading rate: 1000B/s</span>
+$ curl --limit-rate 1000B -O http://www.gnu.org/software/gettext/manual/gettext.html
+</code></pre>
+<h2 id="download-a-file-only-if-updated">Download A File Only If Updated</h2>
+<p>Use <code>-z</code> to download a file updated with specific time.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># Download yy.html if it was update after Dec 21, 2011.</span>
+$ curl -z 21-Dec-11 http://www.example.com/yy.html
+<span class="hljs-comment"># Download yy.html if it was update before Dec 21, 2011.</span>
+$ curl -z -21-Dec-11 http://www.example.com/yy.html
+</code></pre>
+<h2 id="authorization">Authorization</h2>
+<p>Use <code>-u</code> to provide username and password.</p>
+<pre><code class="lang-bash">$ curl -u username:password URL
+<span class="hljs-comment"># A safer practice is to type the usename in the command line and then to type the password in the prompt. It can avoid leaks of passwords by look up the command history. </span>
+$ curl -u username URL
+</code></pre>
+<h2 id="ftp">FTP</h2>
+<h3 id="download-files-from-ftp-services">Download files from FTP Services</h3>
+<pre><code class="lang-bash"> <span class="hljs-comment"># List all files and folders under public_html</span>
+ $ curl -u ftpuser:ftppass -O ftp://ftp_server/public_html/
+ <span class="hljs-comment"># Download xss.php</span>
+ curl -u ftpuser:ftppass -O ftp://ftp_server/public_html/xss.php
+</code></pre>
+<h3 id="upload-files-to-ftp-services">Upload files to FTP Services</h3>
+<p>Use <code>-T</code> to upload specific local files to FTP services.</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># Upload myfile.txt</span>
+$ curl -u ftpuser:ftppass -T myfile.txt ftp://ftp.testserver.com
+<span class="hljs-comment"># Upload multiple files</span>
+curl -u ftpuser:ftppass -T <span class="hljs-string">&quot;{file1,file2}&quot;</span> ftp://ftp.testserver.com
+<span class="hljs-comment"># Get from stdin and then upload.</span>
+curl -u ftpuser:ftppass -T - ftp://ftp.testserver.com/myfile_1.txt
+</code></pre>
+<h3 id="listdownload-using-ranges">List/Download Using Ranges</h3>
+<pre><code class="lang-bash">$ curl   ftp://ftp.uk.debian.org/debian/pool/main/[a-z]/
+</code></pre>
+<h2 id="more-information">More information</h2>
+<blockquote>
+<p>Use <code>-v</code> and <code>-trace</code> to get more information about connection, request and response.</p>
+</blockquote>
+<h2 id="look-up-words-in-dictorg">Look up words in <code>dict.org</code></h2>
+<pre><code class="lang-bash"><span class="hljs-comment"># Look up the word bash</span>
+$ curl dict://dict.org/d:bash
+<span class="hljs-comment"># List all avaiable dicts</span>
+$ curl dict://dict.org/show:db
+<span class="hljs-comment"># Look up the word hash in folddoc dict.</span>
+$ curl dict://dict.org/d:bash:foldoc
+</code></pre>
+<h2 id="set-up-proxy-for-curl">Set up proxy for <code>CURL</code></h2>
+<p>Use <code>-x</code> to set up proxy</p>
+<pre><code class="lang-bash">$ curl -x proxysever.test.com:3128 http://google.co.in
+</code></pre>
+<h2 id="store-and-use-cookies">Store and use cookies</h2>
+<pre><code class="lang-bash"> <span class="hljs-comment"># Save cookies into sugarcookies</span>
+ $ curl -D sugarcookies http://localhost/sugarcrm/index.php
+ <span class="hljs-comment"># Use saved cookie</span>
+ $ curl -b sugarcookies http://localhost/sugarcrm/index.php
+</code></pre>
+<h2 id="transfer-request-data">Transfer request data</h2>
+<p>Use <code>--data/-d</code> to use POST method</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># GET</span>
+$ curl -u username https://api.github.com/user?access_token=XXXXXXXXXX
+<span class="hljs-comment"># POST</span>
+$ curl -u username --data <span class="hljs-string">&quot;param1=value1&amp;param2=value&quot;</span> https://api.github.com
+<span class="hljs-comment"># Specify a file as the post data</span>
+$ curl --data @filename https://github.api.com/authorizations
+</code></pre>
+<p>Use <code>--data-urlencode</code> to escape specific characters.</p>
+<pre><code class="lang-bash">curl <span class="hljs-_">-d</span> <span class="hljs-string">&quot;value%201&quot;</span> http://hostname.com
+curl --data-urlencode <span class="hljs-string">&quot;value 1&quot;</span> http://hostname.com
+</code></pre>
+<p>Use <code>-X</code> to specify other protocol method</p>
+<pre><code class="lang-bash">curl -I -X DELETE https://api.github.cim
+</code></pre>
+<p>Use <code>--form</code> to transfer form data</p>
+<pre><code class="lang-bash">curl --form <span class="hljs-string">&quot;fileupload=@filename.txt&quot;</span> http://hostname/resource
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Utilities">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../help.html" class="navigation navigation-next " aria-label="Next page: Help">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"CURL","level":"1.3.1","depth":2,"next":{"title":"Help","level":"1.4","depth":1,"path":"help.md","ref":"help.md","articles":[]},"previous":{"title":"Utilities","level":"1.3","depth":1,"path":"utilities/README.md","ref":"utilities/README.md","articles":[{"title":"CURL","level":"1.3.1","depth":2,"path":"utilities/curl.md","ref":"utilities/curl.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["puml","edit-link","page-toc","codeblock-filename","todo"],"pluginsConfig":{"puml":{},"todo":{},"search":{},"page-toc":{"position":"top","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4","showByDefault":true},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"codeblock-filename":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit Me","base":"https://github.com/ufonion/notes/edit/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"utilities/curl.md","mtime":"2020-03-06T09:15:51.083Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-06T09:29:50.788Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc/anchor-3.1.1.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc/page-toc.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
