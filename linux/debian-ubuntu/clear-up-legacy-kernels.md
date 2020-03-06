@@ -1,4 +1,4 @@
-# Clear up legacy kernels
+# Clean up legacy kernels
 
 ## Check current kernel version
 
