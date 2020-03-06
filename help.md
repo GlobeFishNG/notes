@@ -13,6 +13,11 @@ Alice <-- Bob: Hello, Alice
 {% endplantuml %}
 ```
 
+{% plantuml format = 'svg' %}
+Alice -> Bob: Hello, Bob
+Alice <-- Bob: Hello, Alice
+{% endplantuml %}
+
 * PNG output.
 
 ```text
@@ -22,9 +27,14 @@ Alice <-- Bob: Hello, Alice
 {% endplantuml %}
 ```
 
+{% plantuml format = 'png' %}
+Alice -> Bob: Hello, Bob
+Alice <-- Bob: Hello, Alice
+{% endplantuml %}
+
 ## Check Box
 
-```bash
+```text
 - [ ] Uncompleted task.
 - [x] Completed task.
 ```
