@@ -1,3 +1,4 @@
-# Notes
+# Introduction
 
-My online notes repo
+My online notebook.
+
