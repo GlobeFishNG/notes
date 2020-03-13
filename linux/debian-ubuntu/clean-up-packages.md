@@ -15,3 +15,30 @@ $ sudo apt-get install deborphan
 $ deborphan | xargs sudo apt-get purge -y
 ```
 
+## Remove obselote packages
+
+```bash
+$ sudo aptitude search ?obsolete
+$ sudo aptitude purge ~o
+```
+
+## Remove log files
+
+```bash
+$ sudo apt-get install ncdu
+$ sudo ncdu /var/log
+```
+
+## Disk Occupation GUI
+
+```text
+$ baobab
+```
+
+## Remove high-capacity packages
+
+```text
+$ sudo apt-get install debian-goodies
+$ dpigs -H
+```
+
