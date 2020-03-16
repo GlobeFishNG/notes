@@ -88,6 +88,13 @@ $ ln -s ~/.acme.sh/mayongcong.top/mayongcong.top.cer /etc/cloudflare/mayongcong.
 ### Create cron job to restart v2ray
 
 ```text
+$ cat /root/bin/restart-v2ray.sh
+#!/bin/bash
+
+RESTART="/bin/systemctl restart v2ray"
+
+$RESTART
+
 $ crontab -l
 10 0 * * * "/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null
 30 0 * * * /root/bin/restart-v2ray.sh  > /dev/null
