@@ -1,11 +1,16 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Linux](linux/README.md)
-  * [Debian/Ubuntu](linux/debian-ubuntu/README.md)
-    * [Clean up packages](linux/debian-ubuntu/clean-up-packages.md)
-    * [Clean up legacy kernels](linux/debian-ubuntu/clear-up-legacy-kernels.md)
-* [Utilities](utilities/README.md)
-  * [CURL](utilities/curl.md)
-* [Help](help.md)
+
+## Network
+
+* [CURL](network/curl.md)
+* [v2ray](network/v2ray/README.md)
+  * [Deploy v2ray service on Vultr VPS](network/v2ray/deploy-v2ray-service-on-vultr-vps.md)
+
+## LINUX <a id="linux-1"></a>
+
+* [Debian/Ubuntu](linux-1/debian-ubuntu/README.md)
+  * [Clean up legacy kernels](linux-1/debian-ubuntu/clear-up-legacy-kernels.md)
+  * [Clean up packages](linux-1/debian-ubuntu/clean-up-packages.md)
 
