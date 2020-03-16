@@ -4,7 +4,7 @@
 
 ## Network
 
-* [CURL](network/curl.md)
+* [cURL](network/curl.md)
 * [v2ray](network/v2ray/README.md)
   * [Deploy v2ray service on Vultr VPS](network/v2ray/deploy-v2ray-service-on-vultr-vps.md)
 
