@@ -40,7 +40,7 @@ systemctl daemon-reload
 systemctl restart docker
 ```
 
-### Configure client certificate and environment variables
+## Configure client certificate and environment variables
 
 {% code title="~/.bashrc" %}
 ```bash
