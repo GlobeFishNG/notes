@@ -55,7 +55,7 @@ $ echo extendedKeyUsage = serverAuth >> extfile.cnf
 ### Sign certificate
 
 ```bash
-$ openssl x509 -req -days 365 -sha256 -in client.csr -CA ca.pem -CAkey ca-key.pem \
+$ openssl x509 -req -days 3650 -sha256 -in client.csr -CA ca.pem -CAkey ca-key.pem \
   -CAcreateserial -out cert.pem -extfile extfile-client.cnf
 Signature ok
 subject=/CN=client
@@ -63,7 +63,26 @@ Getting CA Private Key
 Enter pass phrase for ca-key.pem:
 ```
 
-###  Change privileges for security
+## Generate client private and public keys 
+
+```text
+$ openssl genrsa -out key.pem 4096
+Generating RSA private key, 4096 bit long modulus
+.........................................................++
+................++
+e is 65537 (0x10001)
+
+$ openssl req -subj '/CN=client' -new -key key.pem -out client.csr
+$ echo extendedKeyUsage = clientAuth > extfile-client.cnf
+$ openssl x509 -req -days 3650 -sha256 -in client.csr -CA ca.pem -CAkey ca-key.pem \
+  -CAcreateserial -out cert.pem -extfile extfile-client.cnf
+Signature ok
+subject=/CN=client
+Getting CA Private Key
+Enter pass phrase for ca-key.pem:
+```
+
+## Change privileges for security
 
 Public keys \(certificates\) can be world-readable, while private keys should be read-only  by the creator.
 
