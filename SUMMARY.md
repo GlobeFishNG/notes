@@ -16,3 +16,8 @@
   * [Clean up legacy kernels](linux-1/debian-ubuntu/clear-up-legacy-kernels.md)
   * [Clean up packages](linux-1/debian-ubuntu/clean-up-packages.md)
 
+## Virtualization <a id="virtualization-containerization"></a>
+
+* [Docker](virtualization-containerization/docker/README.md)
+  * [Protect the Docker daemon socket](virtualization-containerization/docker/protect-the-docker-daemon-socket.md)
+
