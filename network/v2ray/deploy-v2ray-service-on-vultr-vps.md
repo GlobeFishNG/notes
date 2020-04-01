@@ -15,7 +15,153 @@ $ systemctl enable v2ray
 
 ### Edit v2ray service configuration.
 
-> /etc/v2ray/config.json
+```text
+$ cat /etc/v2ray/config.json
+{
+  "api": {
+    "services": [
+      "HandlerService",
+      "LoggerService",
+      "StatsService"
+    ],
+    "tag": "api"
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 62789,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "127.0.0.1"
+      },
+      "tag": "api"
+    },
+    {
+      "listen": "0.0.0.0",
+      "port": 443,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "alterId": 64,
+            "id": "YOUR_UUID"
+          }
+        ],
+        "disableInsecureEncryption": false
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "enabled": true
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "allowInsecure": true,
+          "certificates": [
+            {
+              "certificateFile": "/etc/cloudflare/mayongcong.top.pem",
+              "keyFile": "/etc/cloudflare/mayongcong.top.key"
+            }
+          ],
+          "serverName": ""
+        },
+        "wsSettings": {
+          "headers": {},
+          "path": "/"
+        }
+      },
+      "tag": "inbound-443"
+    },
+    {
+      "listen": "0.0.0.0",
+      "port": 2053,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "alterId": 64,
+            "id": "YOUR_UUID"
+          }
+        ],
+        "disableInsecureEncryption": false
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "enabled": true
+      },
+      "streamSettings": {
+        "httpSettings": {
+          "host": [],
+          "path": "/"
+        },
+        "network": "http",
+        "security": "tls",
+        "tlsSettings": {
+          "allowInsecure": true,
+          "certificates": [
+            {
+              "certificateFile": "/etc/cloudflare/mayongcong.top.pem",
+              "keyFile": "/etc/cloudflare/mayongcong.top.key"
+            }
+          ],
+          "serverName": ""
+        }
+      },
+      "tag": "inbound-2053"
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {}
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {},
+      "tag": "blocked"
+    }
+  ],
+  "policy": {
+    "system": {
+      "statsInboundDownlink": true,
+      "statsInboundUplink": true
+    }
+  },
+  "routing": {
+    "rules": [
+      {
+        "inboundTag": [
+          "api"
+        ],
+        "outboundTag": "api",
+        "type": "field"
+      },
+      {
+        "ip": [
+          "geoip:private"
+        ],
+        "outboundTag": "blocked",
+        "type": "field"
+      },
+      {
+        "outboundTag": "blocked",
+        "protocol": [
+          "bittorrent"
+        ],
+        "type": "field"
+      }
+    ]
+  },
+  "stats": {}
+}
+```
 
 ### Start v2ray service.
 
