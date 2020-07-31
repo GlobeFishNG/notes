@@ -55,8 +55,8 @@ $ echo extendedKeyUsage = serverAuth >> extfile.cnf
 ### Sign certificate
 
 ```bash
-$ openssl x509 -req -days 3650 -sha256 -in client.csr -CA ca.pem -CAkey ca-key.pem \
-  -CAcreateserial -out cert.pem -extfile extfile-client.cnf
+$ openssl x509 -req -days 3650 -sha256 -in server.csr -CA ca.pem -CAkey ca-key.pem \
+  -CAcreateserial -out server-cert.pem -extfile extfile.cnf
 Signature ok
 subject=/CN=client
 Getting CA Private Key
