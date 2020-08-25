@@ -21,3 +21,8 @@
 * [Docker](virtualization-containerization/docker/README.md)
   * [Protect the Docker daemon socket](virtualization-containerization/docker/protect-the-docker-daemon-socket.md)
 
+## Development
+
+* [Git](development/git/README.md)
+  * [Tricks](development/git/tricks.md)
+
