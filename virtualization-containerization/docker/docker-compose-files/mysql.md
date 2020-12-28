@@ -11,7 +11,7 @@ services:
   ngiqdev:
     container_name: ngiqdev
     image: mysql:5.7
-    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --sql_mode="no_engine_substitution"
     environment:
       - MYSQL_ROOT_PASSWORD=123456
       - MYSQL_DATABASE=ngiqdev
@@ -26,7 +26,7 @@ services:
   ngiqtest:
     container_name: ngiqtest
     image: mysql:5.7
-    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --sql_mode="no_engine_substitution"
     environment:
       - MYSQL_ROOT_PASSWORD=123456
       - MYSQL_DATABASE=ngiqtest
@@ -38,6 +38,7 @@ services:
     ports:
       - 3308:3306
     restart: unless-stopped
+
 
 ```
 {% endcode %}
