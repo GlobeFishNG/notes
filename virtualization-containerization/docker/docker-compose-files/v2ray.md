@@ -1,7 +1,6 @@
 # v2ray
 
-{% code title="docker-compose.yml" %}
-```yaml
+```yaml:docker-compose.yml
 version: "3.8"
 services:
   v2fly-proxy:
@@ -14,10 +13,8 @@ services:
       - "127.0.0.1:1080:10808"
       - "127.0.0.1:8080:10809"
 ```
-{% endcode %}
 
-{% code title="v2ray-perparation.sh" %}
-```bash
+```bash:v2ray-perparation.sh
 #!/bin/sh
 
 # Set ARG
@@ -105,10 +102,8 @@ rm -rfv ${dir_tmp}/
 
 echo "Done"
 ```
-{% endcode %}
 
-{% code title="Dockerfile" %}
-```bash
+```bash:Dockerfile
 FROM alpine:latest
 LABEL maintainer "V2Fly Community <dev@v2fly.org>"
 
@@ -127,7 +122,6 @@ VOLUME /etc/v2ray
 CMD [ "/usr/bin/v2ray", "-confdir", "/etc/v2ray/" ]
 
 ```
-{% endcode %}
 
 
 

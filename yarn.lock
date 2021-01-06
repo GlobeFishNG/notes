@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+gitbook-plugin-page-ref@^0.0.17:
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/gitbook-plugin-page-ref/-/gitbook-plugin-page-ref-0.0.17.tgz#a7b501b2b7e0617e278621da39985fcfce5b393c"
+  integrity sha512-jsqKphbdAy3SW9v4zs622tlApTb1iyOFcTNljhr7cpY1pBs0RxRwdLD7AtIRlGMJFNP2caVjbGOJXRVIF+3hHw==
+
 gitbook-plugin-puml@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/gitbook-plugin-puml/-/gitbook-plugin-puml-1.0.1.tgz#8930d54b51e7574e352cf08f6e156baa50ce6d17"

@@ -3,8 +3,10 @@
     "puml",
     "edit-link",
     "page-toc",
-    "codeblock-filename",
-    "todo"
+    "todo",
+    "page-ref",
+    "code",
+    "codeblock-filename"
   ],
   "pluginsConfig": {
     "edit-link": {

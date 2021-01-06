@@ -5,6 +5,7 @@
     "build": "gitbook build"
   },
   "dependencies": {
+    "gitbook-plugin-page-ref": "^0.0.17",
     "gitbook-plugin-puml": "^1.0.1"
   }
 }
